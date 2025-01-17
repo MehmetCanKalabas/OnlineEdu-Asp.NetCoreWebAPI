@@ -25,7 +25,7 @@ namespace OnlineEdu.DataAccess.Context
         public DbSet<Message> Messages { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Subscriber> Subscribers { get; set; }
-        public DbSet<Testimonial> Testimonial { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
 
     }
 }
