@@ -8,8 +8,8 @@ namespace OnlineEdu.API.Mapping
     {
         public AboutMapping()
         {
-            CreateMap<CreateAboutDto, About>().ReverseMap();
-            CreateMap<About, CreateAboutDto>().ReverseMap();
+            CreateMap<CreateAboutDto, About>().ReverseMap();            
+            CreateMap<UpdateAboutDto, About>().ReverseMap();
         }
     }
 }
