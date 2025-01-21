@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using OnlineEdu.DTO.DTOs.CourseCategoryDtos;
 using OnlineEdu.DTO.DTOs.CourseDtos;
 using OnlineEdu.Entity.Entities;
 
@@ -8,9 +9,9 @@ namespace OnlineEdu.API.Mapping
     {
         public CourseCategoryMapping()
         {
-            CreateMap<CreateCourseDto, Course>().ReverseMap();
-            CreateMap<UpdateCourseDto, Course>().ReverseMap();
-            CreateMap<ResultCourseDto, Course>().ReverseMap();
+            CreateMap<CreateCourseCategoryDtos, CourseCategory>().ReverseMap();
+            CreateMap<UpdateCourseCategoryDto, CourseCategory>().ReverseMap();
+            CreateMap<ResultCourseCategoryDto, CourseCategory>().ReverseMap();
         }
     }
 }
