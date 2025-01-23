@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineEdu.WEBUI.DTOs.BannerDtos
 {
-    public class UpdateBannerDto
+    public class UpdateBlogCategoryDto
     {
         public int BannerId { get; set; }
         public string ImageUrl { get; set; }

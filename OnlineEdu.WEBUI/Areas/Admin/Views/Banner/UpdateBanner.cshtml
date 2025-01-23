@@ -1,0 +1,19 @@
+﻿@using OnlineEdu.WEBUI.DTOs.BannerDtos
+@model UpdateBlogCategoryDto
+@{
+    ViewData["Title"] = "Banner Güncelleme Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <form method="post">
+        <input type="hidden" asp-for="BannerId" />
+        <label class="form-label mt-3">Resim Url </label>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <br />
+        <label class="form-label mt-3">Resim Url </label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <button type="submit" class="btn btn-outline-primary w-100 mt-4">Güncelle</button>
+    </form>
+</div>

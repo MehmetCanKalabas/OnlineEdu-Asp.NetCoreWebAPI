@@ -1,0 +1,34 @@
+﻿@model CreateAboutDto
+
+@{
+    ViewData["Title"] = "Yeni Hakkımda Oluşturma Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+    <form method="post">
+        <label for="Description" class="form-label">Açıklama</label>
+        <textarea name="Description" id="Description" class="form-control" rows="5"></textarea>
+
+        <label for="ImageUrl1" class="form-label mt-3">Resim Url 1</label>
+        <input type="text" name="ImageUrl1" id="ImageUrl1" class="form-control" />
+
+        <label for="ImageUrl2" class="form-label mt-3">Resim Url 2</label>
+        <input type="text" name="ImageUrl2" id="ImageUrl2" class="form-control" />
+
+        <label for="Item1" class="form-label mt-3">Madde 1</label>
+        <input type="text" name="Item1" id="Item1" class="form-control" />
+
+        <label for="Item2" class="form-label mt-3">Madde 2</label>
+        <input type="text" name="Item2" id="Item2" class="form-control" />
+
+        <label for="Item3" class="form-label mt-3">Madde 3</label>
+        <input type="text" name="Item3" id="Item3" class="form-control" />
+
+        <label for="Item4" class="form-label mt-3">Madde 4</label>
+        <input type="text" name="Item4" id="Item4" class="form-control" />
+
+        <button type="submit" class="btn btn-outline-primary w-100 mt-4">Kaydet</button>
+    </form>
+</div>
