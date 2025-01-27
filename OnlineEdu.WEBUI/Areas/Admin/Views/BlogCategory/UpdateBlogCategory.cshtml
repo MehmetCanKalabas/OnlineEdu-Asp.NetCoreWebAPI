@@ -1,0 +1,17 @@
+﻿@using OnlineEdu.WEBUI.DTOs.BlogCategoryDtos
+@model UpdateBlogCategoryDto
+@{
+    ViewData["Title"] = "UpdateBlogCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <form method="post">
+        <input type="hidden" asp-for="BlogCategoryId" />
+        <label class="form-label mt-3">Blog Kategorisi Adı </label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <br />
+        <button type="submit" class="btn btn-outline-primary w-100 mt-4">Güncelle</button>
+    </form>
+</div>

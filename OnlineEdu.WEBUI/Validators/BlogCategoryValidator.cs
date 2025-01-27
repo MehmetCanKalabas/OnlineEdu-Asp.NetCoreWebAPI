@@ -7,8 +7,8 @@ namespace OnlineEdu.WEBUI.Validators
     {
         public BlogCategoryValidator()
         {
-            RuleFor(x=>x.Name).NotEmpty().WithMessage("Kategori adı boş olamaz.");
-            RuleFor(x=>x.Name).MaximumLength(30).WithMessage("Kategori adı en fazla 30 karakter olmalıdır.");
+            RuleFor(x=>x.Name).NotEmpty().WithMessage("Blog Kategori adı boş olamaz.");
+            RuleFor(x=>x.Name).MaximumLength(30).WithMessage("Blog Kategori adı en fazla 30 karakter olmalıdır.");
         }
     }
 }

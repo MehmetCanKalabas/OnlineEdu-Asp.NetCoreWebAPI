@@ -36,12 +36,12 @@ namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> UpdateBanner(int id)
         {
-            var values = await _client.GetFromJsonAsync<UpdateBlogCategoryDto>($"banners/{id}");
+            var values = await _client.GetFromJsonAsync<UpdateBannerDto>($"banners/{id}");
             return View(values);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateBanner(UpdateBlogCategoryDto updateBannerDto)
+        public async Task<IActionResult> UpdateBanner(UpdateBannerDto updateBannerDto)
         {
             await _client.PutAsJsonAsync("banners", updateBannerDto);
             return RedirectToAction(nameof(Index));

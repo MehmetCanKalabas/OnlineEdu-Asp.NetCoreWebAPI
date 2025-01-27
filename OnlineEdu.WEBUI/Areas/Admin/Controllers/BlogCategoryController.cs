@@ -33,6 +33,7 @@ namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
             var result = await validator.ValidateAsync(createBlogCategoryDto);
             if (!result.IsValid)
             {
+                ModelState.Clear();
                 foreach (var x in result.Errors)
                 {
                     ModelState.AddModelError(x.PropertyName, x.ErrorMessage);
