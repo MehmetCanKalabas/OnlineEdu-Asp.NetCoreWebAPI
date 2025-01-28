@@ -1,0 +1,33 @@
+﻿@using OnlineEdu.WEBUI.DTOs.BlogDtos
+@model UpdateBlogDto
+
+@{
+    ViewData["Title"] = "Blog Güncelleme Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <form method="post">
+        <input type="hidden" asp-for="BlogId" />
+
+        <label class="form-label mt-3">Blog Başlığı </label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+
+        <label class="form-label mt-3">Resim Url </label>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <br />
+
+        <label class="form-label mt-3">Blog Kategorisi </label>
+        <select asp-items="@ViewBag.Categories" asp-for="BlogCategoryId" class="form-control">
+            <option>Kategori Seçiniz</option>
+        </select>
+        <br />
+
+        <label class="form-label mt-3">Blog Başlığı </label>
+        <textarea type="text" asp-for="Content" class="form-control" rows="5"> </textarea>
+        <br />
+
+        <button type="submit" class="btn btn-outline-primary w-100 mt-4">Güncelle</button>
+    </form>
+</div>

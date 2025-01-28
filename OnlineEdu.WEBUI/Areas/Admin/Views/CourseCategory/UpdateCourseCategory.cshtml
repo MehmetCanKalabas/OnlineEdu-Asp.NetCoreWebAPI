@@ -1,0 +1,23 @@
+﻿@using OnlineEdu.WEBUI.DTOs.CourseCategoryDtos
+@model UpdateCourseCategoryDto
+@{
+    ViewData["Title"] = "Kurs Kategorisi Güncelleme Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <input type="hidden" asp-for="CourseCategoryId" />
+    <form method="post">
+        <label>Kurs Kategori İsmi</label>
+        <input asp-for="Name" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input asp-for="Description" class="form-control" rows="3" />
+        <br />
+        <label>Ana Sayfada Gösterilsin</label>
+        <input type="checkbox" asp-for="IsShown" class="form-check" />
+        <br />
+        <button type="submit" class="btn btn-outline-primary">Güncelle</button>
+    </form>
+</div>
+

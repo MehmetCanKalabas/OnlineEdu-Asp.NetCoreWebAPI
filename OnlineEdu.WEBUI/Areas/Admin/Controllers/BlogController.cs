@@ -31,7 +31,7 @@ namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
             return View(values);
         }
 
-        public async Task<IActionResult> DeleteBlog(int id) 
+        public async Task<IActionResult> DeleteBlog(int id)
         {
             await _client.DeleteAsync($"blogs/{id}");
             return RedirectToAction(nameof(Index));
@@ -65,6 +65,7 @@ namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateBlog(int id)
         {
+            await CategoryDropDown();
             var values = await _client.GetFromJsonAsync<UpdateBlogDto>($"blogs/{id}");
             return View(values);
         }
