@@ -9,15 +9,15 @@ namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
     public class CourseCategoryController : Controller
     {
         private readonly HttpClient _client = HttpClientInstance.CreateClient();
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var values = _client.GetFromJsonAsync<List<ResultCourseCategoryDto>>("courseCategories").Result;
+            var values = await _client.GetFromJsonAsync<List<ResultCourseCategoryDto>>("courseCategories");
             return View(values);
         }
 
         public async Task<IActionResult> DeleteCourseCategory(int id)
         {
-            await _client.DeleteAsync($"courseCategories/{id}");
+            await _client.DeleteAsync("CourseCategories/" + id);
             return RedirectToAction(nameof(Index));
         }
 

@@ -1,0 +1,29 @@
+﻿@using OnlineEdu.WEBUI.DTOs.CourseDtos
+@model CreateCourseDto
+@{
+    ViewData["Title"] = "CreateCourse";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="container mt-4">
+        <label>Resim Url</label>
+        <input type="text" class="form-control" asp-for="ImageUrl">
+        <br />
+        <label>Kurs Adı</label>
+        <input type="text" class="form-control" asp-for="CourseName">
+        <br />
+        <label>Fiyat</label>
+        <input type="text" class="form-control" asp-for="Price">
+        <br />
+        <label >Kategori</label>
+        <select class="form-control" asp-for="CourseCategoryId" asp-items="@ViewBag.CourseCategories">
+            <option>Kategori Seçiniz</option>
+        </select>
+        <br />
+        <label>Ana Sayfada Gösterilsin</label>
+        <input type="checkbox" asp-for="IsShown" class="form-check" />
+        <br />
+        <button type="submit" class="btn btn-outline-primary">Kaydet</button>
+    </div>
+</form>
