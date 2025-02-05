@@ -1,0 +1,24 @@
+﻿@using OnlineEdu.WEBUI.DTOs.SocialMediaDtos
+@model CreateSocialMediaDto
+@{
+    ViewData["Title"] = "Yeni Sosyal Medya Ekleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <form method="post">
+        <label class="form-label mt-3">Sosyal Medya Adı </label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+
+        <label class="form-label mt-3">Sosyal Medya Url Linki </label>
+        <input type="text" asp-for="Url" class="form-control" />
+        <br />
+
+        <label class="form-label mt-3">Sosyal Medya Icon </label>
+        <input type="text" asp-for="Icon" class="form-control" />
+        <br />
+
+        <button type="submit" class="btn btn-outline-primary w-100 mt-4">Kaydet</button>
+    </form>
+</div>
