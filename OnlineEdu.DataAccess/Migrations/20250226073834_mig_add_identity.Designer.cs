@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineEdu.DataAccess.Context;
 
@@ -11,9 +12,11 @@ using OnlineEdu.DataAccess.Context;
 namespace OnlineEdu.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250226073834_mig_add_identity")]
+    partial class mig_add_identity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -364,9 +367,6 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"));
 
-                    b.Property<int?>("AppUserId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CourseCategoryId")
                         .HasColumnType("int");
 
@@ -386,8 +386,6 @@ namespace OnlineEdu.DataAccess.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("CourseId");
-
-                    b.HasIndex("AppUserId");
 
                     b.HasIndex("CourseCategoryId");
 
@@ -417,29 +415,6 @@ namespace OnlineEdu.DataAccess.Migrations
                     b.HasKey("CourseCategoryId");
 
                     b.ToTable("CoursesCategories");
-                });
-
-            modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseRegister", b =>
-                {
-                    b.Property<int>("CourseRegisterId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseRegisterId"));
-
-                    b.Property<int>("AppUserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CourseRegisterId");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("CourseId");
-
-                    b.ToTable("CourseRegisters");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Message", b =>
@@ -600,55 +575,18 @@ namespace OnlineEdu.DataAccess.Migrations
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Course", b =>
                 {
-                    b.HasOne("OnlineEdu.Entity.Entities.AppUser", "AppUser")
-                        .WithMany("Courses")
-                        .HasForeignKey("AppUserId");
-
                     b.HasOne("OnlineEdu.Entity.Entities.CourseCategory", "CourseCategory")
                         .WithMany("Courses")
                         .HasForeignKey("CourseCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("AppUser");
-
                     b.Navigation("CourseCategory");
-                });
-
-            modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseRegister", b =>
-                {
-                    b.HasOne("OnlineEdu.Entity.Entities.AppUser", "AppUser")
-                        .WithMany("CourseRegisters")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("OnlineEdu.Entity.Entities.Course", "Course")
-                        .WithMany("CourseRegisters")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Course");
-                });
-
-            modelBuilder.Entity("OnlineEdu.Entity.Entities.AppUser", b =>
-                {
-                    b.Navigation("CourseRegisters");
-
-                    b.Navigation("Courses");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.BlogCategory", b =>
                 {
                     b.Navigation("Blog");
-                });
-
-            modelBuilder.Entity("OnlineEdu.Entity.Entities.Course", b =>
-                {
-                    b.Navigation("CourseRegisters");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseCategory", b =>
