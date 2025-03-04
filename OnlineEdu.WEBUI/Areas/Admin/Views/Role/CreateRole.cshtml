@@ -1,0 +1,19 @@
+﻿@using OnlineEdu.WEBUI.DTOs.RoleDtos
+@model CreateRoleDto
+
+@{
+    ViewData["Title"] = "Yeni Rol Oluşturma Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+
+    <form method="post">
+
+        <label>Rol Adı</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+
+        <button class="btn btn-outline-primary">Kaydet</button>
+    </form>
+</div>
