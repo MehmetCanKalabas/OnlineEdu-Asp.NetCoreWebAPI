@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WEBUI.DTOs.AboutDtos;
 using OnlineEdu.WEBUI.Helpers;
 
 namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
-    [Route("[area]/[controller]/[action]/{id?}")]
     public class AboutController : Controller
     {
         private readonly HttpClient _client = HttpClientInstance.CreateClient();

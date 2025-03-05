@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineEdu.Entity.Entities;
@@ -7,8 +8,8 @@ using OnlineEdu.WEBUI.Services.RoleServices;
 
 namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
 {
+
     [Area("Admin")]
-    [Route("[area]/[controller]/[action]/{id?}")]
 
     public class RoleController(IRoleService _roleService) : Controller
     {

@@ -15,5 +15,7 @@ namespace OnlineEdu.WEBUI.DTOs.CourseDtos
         public decimal Price { get; set; }
         public bool IsShown { get; set; }
         public int CourseCategoryId { get; set; }
+        public int AppUserId { get; set; }
+
     }
 }

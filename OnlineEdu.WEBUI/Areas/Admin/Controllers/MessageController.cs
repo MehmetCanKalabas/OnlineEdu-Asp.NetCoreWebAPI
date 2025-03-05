@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OnlineEdu.WEBUI.DTOs.MessageDtos;
 using OnlineEdu.WEBUI.Helpers;
 
 namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+
     [Area("Admin")]
-    [Route("Admin/[controller]/[action]/{id?}")]
     public class MessageController : Controller
     {
         private readonly HttpClient _client = HttpClientInstance.CreateClient();

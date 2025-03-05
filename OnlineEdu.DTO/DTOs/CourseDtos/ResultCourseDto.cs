@@ -17,5 +17,7 @@ namespace OnlineEdu.DTO.DTOs.CourseDtos
         public bool IsShown { get; set; }
         public ResultCourseCategoryDto resultCourseCategoryDto { get; set; }
         public int CourseCategoryId { get; set; }
+        public int AppUserId { get; set; }
+
     }
 }

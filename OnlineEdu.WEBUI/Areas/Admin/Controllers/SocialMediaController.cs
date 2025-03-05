@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WEBUI.DTOs.SocialMediaDtos;
 using OnlineEdu.WEBUI.Helpers;
 using OnlineEdu.WEBUI.Validators;
 
 namespace OnlineEdu.WEBUI.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+
     [Area("Admin")]
-    [Route("Admin/[controller]/[action]/{id?}")]
     public class SocialMediaController : Controller
     {
         private readonly HttpClient _client = HttpClientInstance.CreateClient();
